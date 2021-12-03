@@ -1,6 +1,6 @@
 APP_NAME = xTool
 BIN_NAME = xtool
-APP_VERSION = 0.0.0
+APP_VERSION = 0.0.1
 
 SHELL := env /bin/bash
 
@@ -43,6 +43,10 @@ help:
 	@echo ""
 	@echo "  start: run the application"
 	@echo ""
+	@echo "  start-docker: run the application for docker"
+	@echo ""
+	@echo "  tag: add a tag to the application"
+	@echo ""
 
 lint:
 	@go vet ./src/...
@@ -52,3 +56,6 @@ start: build
 
 start-docker: build-docker
 	docker run --rm impossible98/$(BIN_NAME)
+
+tag:
+	@git tag -a v$(APP_VERSION) -m "Release $(APP_VERSION)"

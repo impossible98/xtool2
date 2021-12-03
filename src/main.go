@@ -1,7 +1,7 @@
 package main
 
-import "fmt"
+import "xtool.app/src/cmd"
 
 func main() {
-	fmt.Println("Hello, world!")
+	cmd.Cli()
 }
